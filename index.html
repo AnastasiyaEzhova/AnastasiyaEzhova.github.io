@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processing...</title>
+    <title>Processing</title>
     <style>
         body {
             display: flex;
@@ -20,7 +20,8 @@
     </style>
 </head>
 <body>
-    <img id="gif" src="https://media.giphy.com/media/3o7TKsQ8kCPF01pMA8/giphy_s.gif" alt="Static GIF Frame">
+    <!-- Используем заглушку или статичный первый кадр -->
+    <img id="gif" src="https://via.placeholder.com/300x200?text=Click+to+Play" data-src="https://mashby.com/wp-content/uploads/2018/01/hero-recaptcha-demo.gif" alt="Static GIF Frame">
     <script>
         const gif = document.getElementById('gif');
         let isClicked = false;
@@ -28,14 +29,12 @@
         gif.addEventListener('click', () => {
             if (!isClicked) {
                 isClicked = true;
-                // Заменяем статичное изображение на анимированный GIF
-                gif.src = 'https://media.giphy.com/media/3o7TKsQ8kCPF01pMA8/giphy.gif';
-                
-                // Устанавливаем таймер для перехода после предполагаемой длительности GIF
-                // Длительность GIF можно узнать из метаданных, но для примера предположим 3 секунды
+                // Заменяем статичное изображение на GIF
+                gif.src = gif.getAttribute('data-src');
+                // Устанавливаем таймер для перехода (3 секунды — предполагаемая длительность GIF)
                 setTimeout(() => {
-                    window.location.href = '#target'; // Переход по якорю на странице
-                }, 3000); // Установите точную длительность GIF, если известно
+                    window.location.href = '#target';
+                }, 3000); // Замените 3000 на точную длительность GIF, если известно
             }
         });
     </script>
