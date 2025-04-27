@@ -20,8 +20,7 @@
     </style>
 </head>
 <body>
-    <!-- Используем заглушку или статичный первый кадр -->
-    <img id="gif" src="https://via.placeholder.com/300x200?text=Click+to+Play" data-src="https://mashby.com/wp-content/uploads/2018/01/hero-recaptcha-demo.gif" alt="Static GIF Frame">
+    <img id="gif" src="https://i.ibb.co/v4jTnBmb/url-upload-680e0e1864106-gif-00-delay-1s.gif" data-src="https://mashby.com/wp-content/uploads/2018/01/hero-recaptcha-demo.gif" alt="Static GIF Frame">
     <script>
         const gif = document.getElementById('gif');
         let isClicked = false;
@@ -29,17 +28,14 @@
         gif.addEventListener('click', () => {
             if (!isClicked) {
                 isClicked = true;
-                // Заменяем статичное изображение на GIF
                 gif.src = gif.getAttribute('data-src');
-                // Устанавливаем таймер для перехода (3 секунды — предполагаемая длительность GIF)
                 setTimeout(() => {
                     window.location.href = '#target';
-                }, 3000); // Замените 3000 на точную длительность GIF, если известно
+                }, 3000);
             }
         });
     </script>
     <div id="target" style="position: absolute; bottom: 0;">
-        <h1>Вы достигли цели!</h1>
     </div>
 </body>
 </html>
