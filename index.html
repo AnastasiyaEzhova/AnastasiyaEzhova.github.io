@@ -1,8 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta http-equiv="refresh" content="0; url=https://offers.affimelody.com/click?pid=119153&offer_id=907">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF с переходом</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        img {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <img id="gif" src="https://media.giphy.com/media/3o7TKsQ8kCPF01pMA8/giphy.gif" alt="Animated GIF">
+    <script>
+        const gif = document.getElementById('gif');
+        
+        gif.addEventListener('click', () => {
+            gif.play();
+            // Создаем временный элемент видео для отслеживания окончания GIF
+            const video = document.createElement('video');
+            video.src = gif.src;
+            video.muted = true;
+            video.play();
+            video.addEventListener('ended', () => {
+                window.location.href = '#target'; // Переход по якорю на странице
+            });
+        });
+    </script>
+    <div id="target" style="position: absolute; bottom: 0;">
+        <h1>Вы достигли цели!</h1>
+    </div>
 </body>
 </html>
