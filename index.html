@@ -8,7 +8,7 @@
         body {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Выравнивание по верхнему краю */
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
@@ -16,6 +16,8 @@
         img {
             cursor: pointer;
             display: block;
+            transform: scale(0.50); /* Уменьшение на 25% */
+            margin-top: 20px; /* Небольшой отступ сверху для точной центровки */
         }
     </style>
 </head>
